@@ -22,7 +22,9 @@ WORKDIR "$workingdir"
 
 # Install Mono 3.12.1
 RUN apt-get update \
-	&& apt-get install -y gnupg curl \
+	&& apt-get install -y --allow-unauthenticated \
+  	gnupg \
+    curl \
 	&& rm -rf /var/lib/apt/lists/* \
   && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF \
   && echo "deb http://download.mono-project.com/repo/debian wheezy/snapshots/3.12.0 main" > /etc/apt/sources.list.d/mono-xamarin.list \
@@ -30,7 +32,11 @@ RUN apt-get update \
 	&& apt-get update \
 	## && apt-get install -y mono-devel ca-certificates-mono fsharp mono-vbnc nuget ## This line existed in the original script however we need to explicitly install every dependency (as per the next two lines)
 	&& curl -s https://gist.githubusercontent.com/ruaridhw/b00e75647c8e96c2f44044c970f19c7f/raw/dc347b538676281c2cf1e35392f5ab9d13d84336/install-mono-3_12.sh | bash /dev/stdin \
-	&& apt-get install -y libglib2.0-dev nuget=2.8.3+md58+dhx1-0xamarin1 ca-certificates-mono=3.12.1-0xamarin1 libnuget-core-cil=2.8.3+md58+dhx1-0xamarin1 \
+	&& apt-get install -y --allow-unauthenticated \
+  	libglib2.0-dev \
+    nuget=2.8.3+md58+dhx1-0xamarin1 \
+    ca-certificates-mono=3.12.1-0xamarin1 \
+    libnuget-core-cil=2.8.3+md58+dhx1-0xamarin1 \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN Rscript -e 'devtools::install_dev_deps()'
