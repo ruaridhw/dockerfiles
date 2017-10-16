@@ -1,9 +1,10 @@
 FROM ruaridhw/r-pkgdev:latest
 MAINTAINER Ruaridh Williamson "ruaridh.williamson@gmail.com"
 
-COPY . /usr/local/R/
-
 WORKDIR /usr/local/R
+
+ADD https://api.github.com/repos/ruaridhw/rClr/compare/master...HEAD /dev/null
+RUN git clone https://github.com/ruaridhw/rClr
 
 # Mono 3.12.1 Dockerfile
 ## https://github.com/mono/docker/blob/e61f59607011d1acd9d594bcef936588a78929e6/3.12.1/Dockerfile
