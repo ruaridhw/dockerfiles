@@ -22,7 +22,7 @@ RUN apt-get update \
   && echo "deb http://download.mono-project.com/repo/debian wheezy/snapshots/3.12.0 main" > /etc/apt/sources.list.d/mono-xamarin.list \
   && echo "deb http://download.mono-project.com/repo/debian 312-security main" >> /etc/apt/sources.list.d/mono-xamarin.list \
 	&& apt-get update \
-	&& bash <(curl -s https://gist.githubusercontent.com/ruaridhw/b00e75647c8e96c2f44044c970f19c7f/raw/dc347b538676281c2cf1e35392f5ab9d13d84336/install-mono-3_12.sh) \
+	&& curl -s https://gist.githubusercontent.com/ruaridhw/b00e75647c8e96c2f44044c970f19c7f/raw/dc347b538676281c2cf1e35392f5ab9d13d84336/install-mono-3_12.sh | bash /dev/stdin \
 	## && apt-get install -y mono-devel ca-certificates-mono fsharp mono-vbnc nuget \
 	&& apt-get update \
 	&& apt-get install -y libglib2.0-dev \
