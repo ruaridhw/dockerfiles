@@ -1,5 +1,8 @@
 FROM ruaridhw/r-pkgdev:latest
-MAINTAINER Ruaridh Williamson "ruaridh.williamson@gmail.com"
+LABEL org.label-schema.license="GPL-2.0" \
+      org.label-schema.vcs-url="https://github.com/ruaridhw/dockerfiles/tree/master/rio" \
+      org.label-schema.vendor="" \
+      maintainer="Ruaridh Williamson <ruaridh.williamson@gmail.com>"
 
 WORKDIR /usr/local/R
 

@@ -1,5 +1,8 @@
 FROM rocker/r-ver:latest
-MAINTAINER Ruaridh Williamson "ruaridh.williamson@gmail.com"
+LABEL org.label-schema.license="GPL-2.0" \
+      org.label-schema.vcs-url="https://github.com/ruaridhw/dockerfiles/tree/master/r-pkgdev" \
+      org.label-schema.vendor="" \
+      maintainer="Ruaridh Williamson <ruaridh.williamson@gmail.com>"
 
 # Install dependencies for curl, openssl, git2r and xml2 packages
 RUN apt-get update \

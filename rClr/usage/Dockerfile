@@ -1,5 +1,8 @@
 FROM ruaridhw/rclr:latest
-MAINTAINER Ruaridh Williamson "ruaridh.williamson@gmail.com"
+LABEL org.label-schema.license="GPL-2.0" \
+      org.label-schema.vcs-url="https://github.com/ruaridhw/dockerfiles/tree/master/rClr/usage" \
+      org.label-schema.vendor="" \
+      maintainer="Ruaridh Williamson <ruaridh.williamson@gmail.com>"
 
 COPY . /usr/local/R/
 
