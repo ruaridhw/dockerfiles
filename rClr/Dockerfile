@@ -4,10 +4,12 @@ LABEL org.label-schema.license="GPL-2.0" \
       org.label-schema.vendor="" \
       maintainer="Ruaridh Williamson <ruaridh.williamson@gmail.com>"
 
-WORKDIR /usr/local/R
+ENV workingdir /usr/local/R
 
 ADD https://api.github.com/repos/ruaridhw/rClr/compare/master...HEAD /dev/null
-RUN git clone https://github.com/ruaridhw/rClr
+RUN git clone https://github.com/ruaridhw/rClr "$workingdir"
+
+WORKDIR "$workingdir"
 
 # Mono 3.12.1 Dockerfile
 ## https://github.com/mono/docker/blob/e61f59607011d1acd9d594bcef936588a78929e6/3.12.1/Dockerfile
@@ -18,6 +20,7 @@ RUN git clone https://github.com/ruaridhw/rClr
 ## -- https://github.com/mono/docker/commit/454d06e1
 ## Unfortunately, rClr doesn't compile with Mono 4.x or Mono 5.x (as yet).
 
+# Install Mono 3.12.1
 RUN apt-get update \
 	&& apt-get install -y gnupg curl \
 	&& rm -rf /var/lib/apt/lists/* \

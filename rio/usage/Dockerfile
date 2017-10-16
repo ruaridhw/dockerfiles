@@ -4,9 +4,11 @@ LABEL org.label-schema.license="GPL-2.0" \
       org.label-schema.vendor="" \
       maintainer="Ruaridh Williamson <ruaridh.williamson@gmail.com>"
 
-COPY . /usr/local/R/
+ENV workingdir /usr/local/R
 
-WORKDIR /usr/local/R
+COPY . "$workingdir"
+
+WORKDIR "$workingdir"
 
 RUN Rscript -e 'devtools::install_dev_deps()'
 
