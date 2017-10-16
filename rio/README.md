@@ -1,4 +1,4 @@
 # rio
 
-A Docker container for compiling and testing the R package leeper/rio based
-on the Docker image ruaridhw/r-pkgdev
+A Docker container based on the image ruaridhw/r-pkgdev that provides an
+environment necessary to build, test, check and install the R package leeper/rio
