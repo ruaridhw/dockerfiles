@@ -8,6 +8,7 @@ RUN apt-get update \
     libssl-dev \
     zlib1g-dev \
     libxml2-dev \
+    git-all \
   && install2.r --error \
     devtools
 
