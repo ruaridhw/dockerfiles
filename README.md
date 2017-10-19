@@ -2,21 +2,21 @@
 
 A collections of custom Docker containers for building and testing R packages
 
-## Current Docker images in development
-```
+## Docker images in development
+<pre>
 rocker/r-ver (Docker image)
  │
 hadley/devtools (R package)
  │
-ruaridhw/r-pkgdev (Docker image)
+<b>ruaridhw/r-pkgdev</b> (Docker image)
  │
- ├── leeper/rio (R package)
+ ├── leeper/rio (R package) ─── <b>ruaridhw/rio</b> (Docker image)
  │
 mono:3.12.1 (Docker image)
  │
- └── jmp75/rClr (R package)
+ └── jmp75/rClr (R package) ─── <b>ruaridhw/rclr</b> (Docker image)
          │
     microsoft/mssql-server-linux (Docker image)
          │
-         └── agstudy/rsqlserver (R package)
-```
+         └── agstudy/rsqlserver (R package) ─── <b>ruaridhw/rsqlserver</b> (Docker image)
+</pre>
